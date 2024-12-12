@@ -197,7 +197,7 @@ greenbone_install() {
     sudo systemctl enable ospd-openvas.service
     sudo systemctl start ospd-openvas.service
     echo "Creating user kali:kali"
-    runuser -u _gvm -- gvmd --create-user=kali --password=kali
+    sudo runuser -u _gvm -- gvmd --create-user=kali --password=kali
     echo "Changing options to set access not only from localhost"
     sudo sed -i 's/127.0.0.1/0.0.0.0/' /usr/lib/systemd/system/greenbone-security-assistant.service
     sudo systemctl daemon-reload
